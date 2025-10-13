@@ -389,7 +389,7 @@ print(f"Saved single CSV file: {final_csv}")
 
 # %%
 # move to processed data folder in git
-git_final_csv = os.path.join("/Workspace/Shared/ait582_rutting/data/processed", "rutting_climate_traffic.csv")
+git_final_csv = os.path.join("/Workspace/Shared/ait582_rutting2/data/processed", "rutting_climate_traffic.csv")
 shutil.copy(final_csv, git_final_csv)
 
 
