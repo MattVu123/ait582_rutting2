@@ -52,34 +52,6 @@ grid_df       = spark.read.option("header", True).option("inferSchema", True).op
 print("All CSVs loaded successfully")
 
 # %%
-# -----------------------------------------------
-# Step 2: Keep only COUNT5–COUNT13 in traffic data (remove CODE01–CODE04)
-# -----------------------------------------------
-
-# Drop COUNT01–COUNT04 if they exist
-# traffic_df = traffic_df.drop(*[f"COUNT{i:02d}" for i in range(1, 5)])
-
-# print(f"Found {len(traffic_files)} matching files: {traffic_files}")
-
-# Read and combine all matching CSVs
-# traffic_df = reduce(
-    # lambda df1, df2: df1.unionByName(df2, allowMissingColumns=True),
-    # [
-        # spark.read
-            # .option("header", True)
-            # .option("inferSchema", True)
-            # .option("nullValue", "NULL")
-            # .csv(os.path.join(base_path, f))
-        # for f in traffic_files
-    # ]
-#)
-
-# Verify load
-# print("All dd_cl_ct_*.csv files loaded and combined successfully.")
-#print(f"Total rows: {traffic_df.count():,}")
-#traffic_df.show(5)
-
-# %%
 # Step 2: Merge all climate-related datasets
 climate_dfs = [humidity_df, precip_df, solar_df, temp_df, wind_df]
 
@@ -99,80 +71,6 @@ merged_climate = merged_climate.join(
 
 print("Added STATE, SHRP_ID, ELEVATION, LATITUDE, and LONGITUDE to climate records")
 print (merged_climate.take(5))
-
-# %%
-# Step 3: Aggregate daily traffic to monthly sums
-# List of vehicle class columns
-#count_cols = [f"COUNT{i:02d}" for i in range(1, 21)]
-
-# Aggregate daily traffic into monthly sums per STATE_CODE, SHRP_ID, YEAR, MONTH
-#traffic_monthly = (traffic_df
-                   #.groupBy("STATE_CODE", "SHRP_ID", "YEAR", "MONTH")
-                   #.agg(*[F.sum(F.col(c)).alias(c) for c in count_cols])
-                  #)
-
-# Add TOTAL_VOLUME summing all vehicle classes
-#traffic_monthly = traffic_monthly.withColumn(
-    #"TOTAL_VOLUME",
-    #reduce(lambda a, b: a + b, [F.col(c) for c in count_cols])
-#)
-#traffic_monthly = traffic_monthly.withColumn(
-    #"SHRP_ID",
-    #F.trim(F.col("SHRP_ID").cast("string"))
-#)
-
-# Ensure SHRP_ID is a string and pad with leading zeros to length 4
-#traffic_monthly = traffic_monthly.withColumn(
-    #"SHRP_ID",
-    #F.lpad(F.col("SHRP_ID").cast("string"), 4, "0")
-#)
-
-#print("Monthly traffic volume sums successfully calculated")
-#traffic_monthly.show(5)
-
-# Show shape and schema
-#row_count = traffic_monthly.count()
-#print(f"\nTotal rows: {row_count:,}")
-#print("Schema:")
-#traffic_monthly.printSchema()
-#print("-" * 60)
-
-# %%
-# Step 3: Aggregate monthy traffic to monthly sums
-# List of vehicle class columns
-# count_cols = [f"CT_SUM_{i:02d}" for i in range(1, 14)] + ["CT_SUM_15"]
-
-# Aggregate daily traffic into monthly sums per STATE_CODE, SHRP_ID, YEAR, MONTH
-# traffic_monthly = (traffic_df
-                   # .groupBy("STATE_CODE", "SHRP_ID", "YEAR", "MONTH")
-                   # .agg(*[F.sum(F.col(c)).alias(c) for c in count_cols])
-                  # )
-
-# Add TOTAL_VOLUME summing all vehicle classes
-# traffic_monthly = traffic_monthly.withColumn(
-    #"TOTAL_VOLUME",
-    #reduce(lambda a, b: a + b, [F.col(c) for c in count_cols])
-#)
-#traffic_monthly = traffic_monthly.withColumn(
-    #"SHRP_ID",
-    #F.trim(F.col("SHRP_ID").cast("string"))
-#)
-
-# Ensure SHRP_ID is a string and pad with leading zeros to length 4
-#traffic_monthly = traffic_monthly.withColumn(
-    #"SHRP_ID",
-    #F.lpad(F.col("SHRP_ID").cast("string"), 4, "0")
-#)
-
-#print("Monthly traffic volume sums successfully calculated")
-#traffic_monthly.show(5)
-
-# Show shape and schema
-#row_count = traffic_monthly.count()
-#print(f"\nTotal rows: {row_count:,}")
-#print("Schema:")
-#traffic_monthly.printSchema()
-#print("-" * 60)
 
 # %%
 # Step 4: Merge with rutting data (target variable) with climate (features)
@@ -201,13 +99,6 @@ southern_states = [
     "Louisiana", "Maryland", "Mississippi", "North Carolina", "Oklahoma",
     "South Carolina", "Tennessee", "Texas", "Virginia", "West Virginia"
 ]
-
-# West
-# western_states = [
-    # "Alaska", "Arizona", "California", "Colorado", "Hawaii", "Idaho",
-    # "Montana", "Nevada", "New Mexico", "Oregon", "Utah", "Washington", "Wyoming"
-# ]
-
 
 # List of southern states
 states = southern_states + northeast_states + midwest_states # + western_states
@@ -268,9 +159,6 @@ rutting_climate_traffic = rutting_climate.join(
     how="left"
 )
 
-# view
-# print("Rutting + climate + traffic merged successfully")
-# rutting_climate_traffic.show(1)
 
 # Show shape and schema
 row_count = rutting_climate_traffic.count()
@@ -279,9 +167,6 @@ print("Schema:")
 rutting_climate_traffic.printSchema()
 print("-" * 60)
 
-# %%
-# rename duplicate
-# traffic_df = traffic_df.withColumnRenamed("STATE_CODE_EXP", "STATE_CODE_EXP_traffic")
 
 # %%
 # select only relevant cols
@@ -397,76 +282,4 @@ shutil.copy(final_csv, git_final_csv)
 # review
 rutting_climate_traffic.show(5)
 
-# %%
-# read in the data
-# csv_path = "/Volumes/workspace/mlrutting-3/mlrutting-3/rutting_climate_traffic.csv"
-
-# rutting_climate_traffic = spark.read.option("header", True).option("inferSchema", True).csv(csv_path)
-
-# View schema and first rows
-# rutting_climate_traffic.printSchema()
-# rutting_climate_traffic.show(5)
-
-# %% [markdown]
-# ---------------------------------------------------------------------------------------------------------------------
-
-# %% [markdown]
-# ## Initial EDA
-
-# %%
-# declare features
-
-'''
-features = [
-    "REL_HUM_AVG_AVG",
-    "PRECIPITATION",
-    "EVAPORATION",
-    "PRECIP_DAYS",
-    "CLOUD_COVER_AVG",
-    "SHORTWAVE_SURFACE_AVG",
-    "TEMP_AVG",
-    "FREEZE_INDEX",
-    "FREEZE_THAW",
-    "WIND_VELOCITY_AVG",
-    "AADTT_VEH_CLASS_4_TREND",
-    "AADTT_VEH_CLASS_5_TREND",
-    "AADTT_VEH_CLASS_6_TREND",
-    "AADTT_VEH_CLASS_7_TREND",
-    "AADTT_VEH_CLASS_8_TREND",
-    "AADTT_VEH_CLASS_9_TREND",
-    "AADTT_VEH_CLASS_10_TREND",
-    "AADTT_VEH_CLASS_11_TREND",
-    "AADTT_VEH_CLASS_12_TREND",
-    "AADTT_VEH_CLASS_13_TREND"
-]
-
-numeric_df = rutting_climate_traffic.select(features)
-
-# %%
-# Convert to Pandas
-numeric_pd = numeric_df.toPandas()
-
-# Compute VIF
-vif_data = pd.DataFrame()
-vif_data["feature"] = numeric_pd.columns
-vif_data["VIF"] = [variance_inflation_factor(numeric_pd.values, i) 
-                   for i in range(numeric_pd.shape[1])]
-
-print(vif_data.sort_values(by="VIF", ascending=False))
-
-# %%
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Include the target variable along with features
-corr_df = rutting_climate_traffic.select(features + ["MAX_MEAN_DEPTH_1_8"]).toPandas()
-
-# Compute correlation matrix
-corr_matrix = corr_df.corr()
-
-# Display correlation matrix
-plt.figure(figsize=(16, 12))
-sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap="coolwarm", cbar=True)
-plt.title("Correlation Matrix Including Rutting Depth")
-plt.show()
-'''
+print("Data processing is done!")
