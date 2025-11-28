@@ -25,7 +25,7 @@ ait614_rutting2/
 
 - **README.md** - Project description and setup instructions.  
 - **.gitignore** - Documents ignored by GitHub during development.  
-- **artifacts/** - Contains miscellaneous project items such as screenshots.  
+- **artifacts/** - Contains miscellaneous project items, such as screenshots.  
 - **data/raw/** - Raw CSV datasets obtained from the Federal Highway Administration.  
 - **data/processed/** - Processed dataset ready for EDA and modeling.  
 - **code and notebooks/** - Python scripts and Jupyter notebooks used for processing, EDA, modeling, and evaluation.  
@@ -55,7 +55,7 @@ data/raw/
 │── traffic/  
 │ └── traffic_annual.csv  
 
-These are the raw CSV datasets.
+These are the raw CSV datasets.  The climate features datasets are located in the climate folder.  The traffic features datasets are located in the traffic folder.  The rutting depth target dataset is located in the rutting folder.
 
 ### Processed Data
 
@@ -63,7 +63,7 @@ data/processed/
 │── rutting_climate_traffic.csv  
 
 
-This file is used for EDA and modeling.
+This is the dataset that resulted from data processing and is used for EDA and modeling.
 
 ---
 
@@ -71,14 +71,14 @@ This file is used for EDA and modeling.
 
 The `code and notebooks` folder contains:
 
-- **processing_notebook.ipynb** - Development notebook for the data processing script.
-- **processing_script.py** - Script used to generate processed datasets.
+- **processing_notebook.ipynb** - Development notebook for the data processing script (can be ignored).
+- **processing_script.py** - Script used to generate processed dataset.
 - **EDA_notebook.ipynb** - Exploratory data analysis.
 - **baseline_notebook.ipynb** - Baseline model and evaluation.
-- **standardized_linear_regression.ipynb** - Standardized linear regression model and evaluation.
-- **decision_tree_notebook.ipynb** - Decision tree model and evaluation.
-- **gradient_boosted_decision_trees_notebook.ipynb** - Gradient-boosted decision tree model and evaluation.
-- **random_forest_notebook.ipynb** - Random forest model and evaluation.
+- **standardized_linear_regression.ipynb** - Standardized linear regression model, tuning, and evaluation.
+- **decision_tree_notebook.ipynb** - Decision tree model, tuning, and evaluation.
+- **gradient_boosted_decision_trees_notebook.ipynb** - Gradient-boosted decision tree model, tuning, and evaluation.
+- **random_forest_notebook.ipynb** - Random forest model, tuning, and evaluation.
 
 ---
 
