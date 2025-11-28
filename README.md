@@ -21,14 +21,14 @@ ait614_rutting2/
 │ └── processed/  
 │── code and notebooks/  
   
-### Folder Descriptions  
+### Folder and File Descriptions  
 
-- **README.md** — Project description and setup instructions.  
-- **.gitignore** — Documents ignored by GitHub during development.  
-- **artifacts/** — Contains miscellaneous project items such as screenshots.  
-- **data/raw/** — Raw CSV datasets obtained from the Federal Highway Administration.  
-- **data/processed/** — Processed dataset ready for EDA and modeling.  
-- **code and notebooks/** — Python scripts and Jupyter notebooks used for processing, EDA, modeling, and evaluation.  
+- **README.md** - Project description and setup instructions.  
+- **.gitignore** - Documents ignored by GitHub during development.  
+- **artifacts/** - Contains miscellaneous project items such as screenshots.  
+- **data/raw/** - Raw CSV datasets obtained from the Federal Highway Administration.  
+- **data/processed/** - Processed dataset ready for EDA and modeling.  
+- **code and notebooks/** - Python scripts and Jupyter notebooks used for processing, EDA, modeling, and evaluation.  
 
 ---
 
@@ -55,6 +55,7 @@ data/raw/
 │── traffic/  
 │ └── traffic_annual.csv  
 
+These are the raw CSV datasets.
 
 ### Processed Data
 
@@ -70,14 +71,14 @@ This file is used for EDA and modeling.
 
 The `code and notebooks` folder contains:
 
-- **processing_notebook.ipynb** — Development notebook for the data processing script.
-- **processing_script.py** — Script used to generate processed datasets.
-- **EDA_notebook.ipynb** — Exploratory data analysis.
-- **baseline_notebook.ipynb** — Baseline model.
-- **standardized_linear_regression.ipynb**
-- **decision_tree_notebook.ipynb**
-- **gradient_boosted_decision_trees_notebook.ipynb**
-- **random_forest_notebook.ipynb**
+- **processing_notebook.ipynb** - Development notebook for the data processing script.
+- **processing_script.py** - Script used to generate processed datasets.
+- **EDA_notebook.ipynb** - Exploratory data analysis.
+- **baseline_notebook.ipynb** - Baseline model and evaluation.
+- **standardized_linear_regression.ipynb** - Standardized linear regression model and evaluation.
+- **decision_tree_notebook.ipynb** - Decision tree model and evaluation.
+- **gradient_boosted_decision_trees_notebook.ipynb** - Gradient-boosted decision tree model and evaluation.
+- **random_forest_notebook.ipynb** - Random forest model and evaluation.
 
 ---
 
@@ -89,13 +90,10 @@ After downloading and unzipping the ZIP file, upload the **`ait614_rutting2`** f
 
 /Workspace/Shared  
 
-
-**Screenshots (replace with your actual images):**
-
 ![Screenshot](artifacts/screenshot_1.png)
 ![Screenshot](artifacts/screenshot_2.png)
 
-Also upload the same folder to **Google Drive**:
+Also, upload the same ait614_rutting2 folder to **Google Drive** (MyDrive):
 
 ![Screenshot](artifacts/screenshot_3.png)
 
