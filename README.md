@@ -177,7 +177,9 @@ Run all cells to reproduce the modeling outputs.  These are the outputs from the
 ## Conclusion
 
 This concludes the AIT 614 Rutting Prediction Project working system.  
-You now have everything needed to process data, perform EDA, run ML models, and interpret results.
+You now have everything needed to process data, perform EDA, run ML models, and interpret results.  
+
+Github link: https://github.com/MattVu123/ait582_rutting2
 
 ---
 
