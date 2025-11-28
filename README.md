@@ -119,14 +119,20 @@ In Databricks:
 
    ![Screenshot](artifacts/screenshot_7.png)
 
-5. Name the schema **mlrutting-3** and click **Create**
+5. Name the schema **mlrutting-3** and click **Create**.
 
    ![Screenshot](artifacts/screenshot_8.png)
 
-6. Click **mlrutting-3** in **workspace**.  Then, **Create volume** and name the volume **mlrutting-3**  
+6. Click **mlrutting-3** in **workspace**.  
 
    ![Screenshot](artifacts/screenshot_9.png)  
+
+7. Click **Create volume**
+
    ![Screenshot](artifacts/screenshot_10.png)  
+
+8. Name the volume **mlrutting-3** and click **Create**.
+
    ![Screenshot](artifacts/screenshot_11.png)  
 
 ---
