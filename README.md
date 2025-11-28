@@ -136,7 +136,7 @@ In Databricks:
 To generate the processed dataset:
 
 1. Open **`processing_script.py`** from the `code and notebooks` directory.
-2. Run the script to create the processed CSV and upload it to DBFS Volumes.
+2. Run the script to create the processed CSV.  This script will upload the processed data to DBFS Volumes.
 
 ![Screenshot](artifacts/screenshot_12.png)
 
@@ -144,7 +144,7 @@ To generate the processed dataset:
 
 ## Exploratory Data Analysis (EDA)
 
-To recreate the EDA visualizations and summary statistics:
+To recreate the EDA visualizations and summary statistics found in the exploratory data analysis section of the project paper:
 
 Run **`EDA_notebook.ipynb`** from the `code and notebooks` folder.
 
