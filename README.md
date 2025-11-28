@@ -162,7 +162,7 @@ In Google Drive, open and run the following notebooks:
 - gradient_boosted_decision_trees_notebook.ipynb  
 - random_forest_notebook.ipynb  
 
-Run all cells to reproduce the modeling outputs.
+Run all cells to reproduce the modeling outputs.  These are the outputs from the modeling outputs section of the project paper.
 
 ![Screenshot](artifacts/screenshot_14.png)
 
