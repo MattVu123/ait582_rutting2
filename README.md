@@ -2,7 +2,7 @@
 
 ## About
 
-In this project, we strive to utilize data obtained from the Federal Highway Administration’s InfoPavement data portal, as well as interpretable machine learning models and techniques, to explain how weather and traffic features affect rutting depth. By doing so, the team anticipates that the project will improve the process of how engineers and planners better predict pavement issues before they occur.  
+In this project, we strive to utilize data obtained from the Federal Highway Administration's InfoPavement data portal, as well as interpretable machine learning models and techniques, to explain how weather and traffic features affect rutting depth. By doing so, the team anticipates that the project will improve the process of how engineers and planners better predict pavement issues before they occur.  
 
 Github link: https://github.com/MattVu123/ait614_rutting2.git
 
@@ -86,18 +86,62 @@ The `code and notebooks` folder contains:
 
 ## Project Working System Setup, Re-compiling, and Re-running Instructions
 
-### 1. Upload Data to DBFS Volumes
+### 1. Upload Project to Databricks Free Edition and Google Drive.
 
-After downloading and unzipping the ZIP file, upload the **`ait614_rutting2`** folder to Databricks Free Edition under:
-
-/Workspace/Shared  
+1. After downloading and unzipping the **`AIT614-Sec001_Team1_sys.zip`** ZIP file on your local machine, there are multiple ways to upload the **`ait614_rutting2`** folder from your local machine to Databricks Free Edition under /Workspace/Shared.  The recommended way to do this is to go to /Workspace/Shared within Databricks Free Edition. 
 
 ![Screenshot](artifacts/screenshot_1.png)
-![Screenshot](artifacts/screenshot_2.png)
+![Screenshot](artifacts/screenshot_1.2.png)  
 
-Also, upload the same ait614_rutting2 folder to **Google Drive** (MyDrive):
+2. Within Databricks Free Edition, Click **Create** and **Git folder**
+
+![Screenshot](artifacts/screenshot_1.3.png) 
+
+3. In **Create Git Folder**, copy-and-paste the link https://github.com/MattVu123/ait614_rutting2.git into the **Git repository URL**.  Click **Create Git folder**.
+
+![Screenshot](artifacts/screenshot_1.4.png)
+
+4.  Now, you have to **Import** the data from your **`ait614_rutting2`** folder on your local machine into Databricks.  Github does not allow large datasets to be uploaded to it.  To do this, Click **Create** and **Folder** within Databricks.
+
+![Screenshot](artifacts/screenshot_1.5.png)
+
+5.  Name the folder **data** and click **Create** 
+
+![Screenshot](artifacts/screenshot_1.6.png)
+
+6.  Within the **data** folder on Databricks, create subfolders **processed** and **raw**.  Within **raw**, create subfolders **climate**, **rutting**, and **traffic**.  Within, **processed** there is no need for another subfolder.  Then, **Import** all the CSV datasets from your **`ait614_rutting2`** folder on your local machine into the **data** folder in Databricks following this structure:
+
+data/raw/  
+│── climate/  
+│ ├── humidity.csv  
+│ ├── merra_grid_sections.csv  
+│ ├── precipitation.csv  
+│ ├── solar.csv  
+│ ├── temp.csv  
+│ └── wind.csv  
+│  
+│── rutting/  
+│ └── rutting.csv  
+│  
+│── traffic/  
+│ └── traffic_annual.csv  
+
+data/processed/  
+│── rutting_climate_traffic.csv  
+
+![Screenshot](artifacts/screenshot_1.7.png)  
+
+![Screenshot](artifacts/screenshot_1.8.png)  
+
+7.  Now, your **`ait614_rutting2`** folder in Databricks should look identical to the **`ait614_rutting2`** folder on your local machine. 
+
+8.  Next, upload the **`ait614_rutting2`** folder on your local machine to **Google Drive** (MyDrive).  To do this within Google Drive, Click **Folder Upload** and upload the **`ait614_rutting2`** folder from your local machine to MyDrive.  
+
+![Screenshot](artifacts/screenshot_3.1.png)
 
 ![Screenshot](artifacts/screenshot_3.png)
+
+9.  Now, you should have exact copies of the **`ait614_rutting2`** folder from your local machine in Databricks Free Edition and Google Drive.
 
 ---
 
@@ -141,28 +185,32 @@ In Databricks:
 
 ## Data Processing
 
-To generate the processed dataset:
+In Databricks Free Edition, to replicate generating the processed dataset:
 
-1. Open **`processing_script.py`** from the `code and notebooks` directory.
+1. In Databricks Free Edition, open **`processing_script.py`** from the `code and notebooks` directory.
 2. Run the script to create the processed CSV.  This script will upload the processed data to DBFS Volumes.
 
 ![Screenshot](artifacts/screenshot_12.png)
+
+Special Note: Data processing was done in Databricks Free Edition.
 
 ---
 
 ## Exploratory Data Analysis (EDA)
 
-To recreate the EDA visualizations and summary statistics found in the exploratory data analysis section of the project paper:
+In Databricks Free Edition, to recreate the EDA visualizations and summary statistics found in the exploratory data analysis section of the project paper:
 
 Run **`EDA_notebook.ipynb`** from the `code and notebooks` folder.
 
 ![Screenshot](artifacts/screenshot_13.png)
 
+Special Note: EDA was done in Databricks Free Edition.
+
 ---
 
 ## Machine Learning, Modeling, Evaluation, and Feature Importance
 
-In Google Drive, open and run the following notebooks:
+To recreate our modeling outputs, open and run the following notebooks in Google Drive and Google Colab:
 
 - baseline_notebook.ipynb  
 - standardized_linear_regression.ipynb  
@@ -177,6 +225,8 @@ Run all cells to reproduce the modeling outputs, such as tuned hyperparameters (
 ![Screenshot](artifacts/screenshot_15.png)
 
 ![Screenshot](artifacts/screenshot_16.png)
+
+Special Note: Modeling and evaluation was done in Google Drive and Google Colab.
 
 ---
 
