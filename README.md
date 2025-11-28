@@ -2,7 +2,9 @@
 
 ## About
 
-In this project, we strive to utilize data obtained from the Federal Highway Administration’s InfoPavement data portal, as well as interpretable machine learning models and techniques, to explain how weather and traffic features affect rutting depth. By doing so, the team anticipates that the project will improve the process of how engineers and planners better predict pavement issues before they occur.
+In this project, we strive to utilize data obtained from the Federal Highway Administration’s InfoPavement data portal, as well as interpretable machine learning models and techniques, to explain how weather and traffic features affect rutting depth. By doing so, the team anticipates that the project will improve the process of how engineers and planners better predict pavement issues before they occur.  
+
+Github link: https://github.com/MattVu123/ait614_rutting2.git
 
 ---
 
@@ -182,8 +184,6 @@ Run all cells to reproduce the modeling outputs, such as tuned hyperparameters (
 
 This concludes the AIT 614 Rutting Prediction Project working system.  
 You now have everything needed to process data, perform EDA, run ML models, and interpret results.
-
-Github link: https://github.com/MattVu123/ait614_rutting2.git
 
 ---
 
