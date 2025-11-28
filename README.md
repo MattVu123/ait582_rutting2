@@ -115,7 +115,7 @@ In Databricks:
 
    ![Screenshot](artifacts/screenshot_6.png)
 
-4. Create a new schema:
+4. Create a new schem by clicking the + button:
 
    ![Screenshot](artifacts/screenshot_7.png)
 
