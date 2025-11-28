@@ -173,7 +173,7 @@ In Databricks:
 
    ![Screenshot](artifacts/screenshot_9.png)  
 
-7. Click **Create volume**
+7. Click **Create volume** or the **+**.
 
    ![Screenshot](artifacts/screenshot_10.png)  
 
@@ -186,7 +186,7 @@ In Databricks:
    ![Screenshot](artifacts/screenshot_11.1.png)  
 
    ![Screenshot](artifacts/screenshot_11.2.png)  
-   
+
 ---
 
 ## Data Processing
