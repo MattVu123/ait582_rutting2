@@ -187,6 +187,8 @@ In Databricks:
 
    ![Screenshot](artifacts/screenshot_11.2.png)  
 
+   ![Screenshot](artifacts/screenshot_11.3.png) 
+
 ---
 
 ## Data Processing
