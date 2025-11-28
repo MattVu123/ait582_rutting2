@@ -109,7 +109,7 @@ The `code and notebooks` folder contains:
 
 ![Screenshot](artifacts/screenshot_1.6.png)
 
-6.  Within the **data** folder on Databricks, create subfolders **processed** and **raw**.  Within **raw**, create subfolders **climate**, **rutting**, and **traffic**.  Within, **processed** there is no need for another subfolder.  Then, **Import** all the CSV datasets from your **`ait614_rutting2`** folder on your local machine into the **data** folder in Databricks following this structure:
+6.  Within the **data** folder on Databricks, create subfolders **processed** and **raw**.  Within **raw**, create subfolders **climate**, **rutting**, and **traffic**.  Within **processed**, there is no need for another subfolder.  Then, **Import** all the CSV datasets from your **`ait614_rutting2`** folder on your local machine into the **data** folder in Databricks following this structure:
 
 data/raw/  
 │── climate/  
