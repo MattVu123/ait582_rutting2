@@ -181,6 +181,12 @@ In Databricks:
 
    ![Screenshot](artifacts/screenshot_11.png)  
 
+9.  Now within /workspace/mlrutting-3/mlrutting-3/ upload all CSV data files from your local machine to volume.
+
+   ![Screenshot](artifacts/screenshot_11.1.png)  
+
+   ![Screenshot](artifacts/screenshot_11.2.png)  
+   
 ---
 
 ## Data Processing
