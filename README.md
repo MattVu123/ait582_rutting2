@@ -123,7 +123,7 @@ In Databricks:
 
    ![Screenshot](artifacts/screenshot_8.png)
 
-6. Click **Create volume**, also named **mlrutting-3**  
+6. Click **mlrutting-3** in **workspace**.  Then, **Create volume** and name the volume **mlrutting-3**  
 
    ![Screenshot](artifacts/screenshot_9.png)  
    ![Screenshot](artifacts/screenshot_10.png)  
