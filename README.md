@@ -168,16 +168,20 @@ In Google Drive, open and run the following notebooks:
 - gradient_boosted_decision_trees_notebook.ipynb  
 - random_forest_notebook.ipynb  
 
-Run all cells to reproduce the modeling outputs.  These are the outputs from the modeling outputs section of the project paper.
+Run all cells to reproduce the modeling outputs, such as tuned hyperparameters (all models), 5-fold CV RMSE values (all models), test RMSE (random forest), model coefficients (standardized linear regression), and feature importance plots (all models).  These are the outputs from the modeling outputs section of the project paper.  If you are prompted to permit this notebook to access your Google Drive files, then click **Connect to Google Drive** and keep clicking **continue** or **grant access**.  Run each notebook individually, they take some time to run.
 
 ![Screenshot](artifacts/screenshot_14.png)
+
+![Screenshot](artifacts/screenshot_15.png)
+
+![Screenshot](artifacts/screenshot_16.png)
 
 ---
 
 ## Conclusion
 
 This concludes the AIT 614 Rutting Prediction Project working system.  
-You now have everything needed to process data, perform EDA, run ML models, and interpret results.  
+You now have everything needed to process data, perform EDA, run ML models, and interpret results.
 
 Github link: https://github.com/MattVu123/ait582_rutting2
 

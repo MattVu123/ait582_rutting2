@@ -283,3 +283,6 @@ shutil.copy(final_csv, git_final_csv)
 rutting_climate_traffic.show(5)
 
 print("Data processing is done!")
+
+# Stop Spark session
+spark.stop()
