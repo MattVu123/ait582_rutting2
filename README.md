@@ -101,7 +101,7 @@ The `code and notebooks` folder contains:
 
 ![Screenshot](artifacts/screenshot_1.4.png)
 
-4.  Now, you have to **Import** the data from your **`ait614_rutting2`** folder on your local machine into Databricks.  Github does not allow large datasets to be uploaded to it.  To do this, Click **Create** and **Folder** within Databricks.
+4.  Now, you have to **Import** the data from your **`ait614_rutting2`** folder on your local machine into Databricks.  Github does not allow large datasets to be uploaded to it.  To do this, Click **Create** and **Folder** within **`ait614_rutting2`** in Databricks.
 
 ![Screenshot](artifacts/screenshot_1.5.png)
 
