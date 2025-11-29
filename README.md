@@ -226,7 +226,7 @@ To recreate our modeling outputs, open and run the following notebooks in Google
 - gradient_boosted_decision_trees_notebook.ipynb  
 - random_forest_notebook.ipynb  
 
-Run all cells to reproduce the modeling outputs, such as tuned hyperparameters (all models), 5-fold CV RMSE values (all models), test RMSE (random forest), model coefficients (standardized linear regression), and feature importance plots (all models).  These are the outputs from the modeling outputs section of the project paper.  If you are prompted to permit this notebook to access your Google Drive files, then click **Connect to Google Drive** and keep clicking **continue** or **grant access**.  Run each notebook individually, they take some time to run.
+Run all cells to reproduce the modeling outputs, such as tuned hyperparameters (all models), 5-fold CV RMSE values (all models), test RMSE (random forest), model coefficients (standardized linear regression), and feature importance plots (all models).  These are the outputs from the modeling outputs section of the project paper.  If you are prompted to permit this notebook to access your Google Drive files, then click **Connect to Google Drive** and keep clicking **continue** or **grant access** to all files.  Run each notebook individually, they take some time to run.
 
 ![Screenshot](artifacts/screenshot_14.png)
 
