@@ -73,7 +73,7 @@ This is the dataset that resulted from data processing and is used for EDA and m
 
 The `code and notebooks` folder contains:
 
-- **processing_notebook.ipynb** - Development notebook for the data processing script (please IGNORE).
+- **processing_notebook.py** - Development notebook for the data processing script (please IGNORE).
 - **processing_script.py** - Script used to generate processed dataset.
 - **EDA_notebook.ipynb** - Exploratory data analysis.
 - **baseline_notebook.ipynb** - Baseline model and evaluation.
