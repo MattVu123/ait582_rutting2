@@ -135,7 +135,7 @@ data/processed/
 
 7.  Now, your **`ait614_rutting2`** folder in Databricks should look identical to the **`ait614_rutting2`** folder on your local machine. 
 
-8.  Next, upload the **`ait614_rutting2`** folder on your local machine to **Google Drive** (MyDrive).  To do this within Google Drive, Click **Folder Upload** and upload the **`ait614_rutting2`** folder from your local machine to MyDrive.  
+8.  Next, upload the **`ait614_rutting2`** folder on your local machine to **Google Drive** (MyDrive).  To do this within Google Drive, Click **Folder Upload** and upload the **`ait614_rutting2`** folder from your local machine to MyDrive.  Important: Ensure that you place the **`ait614_rutting2`** folder in the immediate MyDrive directory as seen in the screenshots below to ensure paths are correct (e.g. MyDrive/ait614_rutting2).  
 
 ![Screenshot](artifacts/screenshot_3.1.png)
 
